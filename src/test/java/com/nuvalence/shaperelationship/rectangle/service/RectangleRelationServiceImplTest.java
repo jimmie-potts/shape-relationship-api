@@ -89,7 +89,7 @@ public class RectangleRelationServiceImplTest {
     // Assemble
     RectangleRelationServiceImpl service = new RectangleRelationServiceImpl();
     Set<ShapeRelationship> relationshipsToEvaluate = new HashSet<>();
-    relationshipsToEvaluate.add(ShapeRelationship.ADJANCENT);
+    relationshipsToEvaluate.add(ShapeRelationship.ADJACENT);
 
     // Act
     service.buildRulesSet(relationshipsToEvaluate);

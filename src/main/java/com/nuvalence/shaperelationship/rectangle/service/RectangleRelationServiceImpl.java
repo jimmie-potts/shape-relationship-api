@@ -38,7 +38,7 @@ public class RectangleRelationServiceImpl implements RectangleRelationService {
           case CONTAINMENT:
             rules.add(new ContainmentRuleImpl());
             break;
-          case ADJANCENT:
+          case ADJACENT:
             rules.add(new AdjacentRuleImpl());
             break;
           case INTERSECTION:

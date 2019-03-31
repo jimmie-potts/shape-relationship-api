@@ -33,6 +33,6 @@ public class AdjacentRuleImplTest {
     ShapeRelationship relationship = rule.calculateRelationship(rectangle1, rectangle2);
 
     // Assert
-    Assert.assertEquals(ShapeRelationship.ADJANCENT, relationship);
+    Assert.assertEquals(ShapeRelationship.ADJACENT, relationship);
   }
 }

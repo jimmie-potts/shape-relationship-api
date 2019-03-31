@@ -15,7 +15,7 @@ public class AdjacentRuleImpl implements RelationshipRule<Rectangle> {
           rect1.getUpperLeft().getY(),
           rect2.getBottomRight().getY(),
           rect2.getUpperLeft().getY())) {
-        return ShapeRelationship.ADJANCENT;
+        return ShapeRelationship.ADJACENT;
       }
     }
     if (rect1.getBottomRight().getY().equals(rect2.getUpperLeft().getY())
@@ -25,7 +25,7 @@ public class AdjacentRuleImpl implements RelationshipRule<Rectangle> {
           rect1.getBottomRight().getX(),
           rect2.getUpperLeft().getX(),
           rect2.getBottomRight().getX())) {
-        return ShapeRelationship.ADJANCENT;
+        return ShapeRelationship.ADJACENT;
       }
     }
     return ShapeRelationship.NONE;
