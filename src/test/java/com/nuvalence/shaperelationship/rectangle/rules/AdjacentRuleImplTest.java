@@ -19,11 +19,4 @@ public class AdjacentRuleImplTest {
 
     Assert.assertEquals(ShapeRelationship.NONE, relationship);
   }
-
-  @Test
-  public void getSharedCoordinates() {
-    int[] test = rule.getSharedCoordinates(8, 1, 3, 8);
-    Assert.assertEquals(3, test[0]);
-    Assert.assertEquals(8, test[1]);
-  }
 }
