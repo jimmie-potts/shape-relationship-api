@@ -1,8 +1,12 @@
 package com.nuvalence.shaperelationship.dto;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+
+@Valid
 public class ShapeCoordinate {
-  private Integer x;
-  private Integer y;
+  @NotNull private Integer x;
+  @NotNull private Integer y;
 
   private ShapeCoordinate() {}
 

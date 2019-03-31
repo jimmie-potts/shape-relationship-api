@@ -1,10 +1,15 @@
 package com.nuvalence.shaperelationship.rectangle.dto;
 
 import com.nuvalence.shaperelationship.dto.ShapeCoordinate;
+import com.nuvalence.shaperelationship.rectangle.validator.ValidCoordinates;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
+@Valid
+@ValidCoordinates(upperLeft = "upperLeft", bottomRight = "bottomRight")
 public class Rectangle {
-  private ShapeCoordinate upperLeft;
-  private ShapeCoordinate bottomRight;
+  @NotNull private ShapeCoordinate upperLeft;
+  @NotNull private ShapeCoordinate bottomRight;
 
   private Rectangle() {}
 

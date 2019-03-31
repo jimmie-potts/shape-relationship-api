@@ -1,8 +1,11 @@
 package com.nuvalence.shaperelationship.rectangle.dto;
 
+import javax.validation.Valid;
+
+@Valid
 public class RectangleRelationshipRequest {
-  private Rectangle rectangle1;
-  private Rectangle rectangle2;
+  @Valid private Rectangle rectangle1;
+  @Valid private Rectangle rectangle2;
 
   private RectangleRelationshipRequest() {}
 

@@ -23,7 +23,7 @@ public class RectangleController {
   }
 
   @RequestMapping(path = "/analyze", method = RequestMethod.POST)
-  public ResponseEntity<?> analyze(@Valid @RequestBody RectangleRelationshipRequest request) {
+  public ResponseEntity<?> analyze(@RequestBody @Valid RectangleRelationshipRequest request) {
     ShapeRelationship relationship =
         service.analyze(request.getRectangle1(), request.getRectangle2());
 
