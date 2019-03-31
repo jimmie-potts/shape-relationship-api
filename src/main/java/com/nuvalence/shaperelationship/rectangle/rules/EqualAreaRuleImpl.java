@@ -8,7 +8,7 @@ public class EqualAreaRuleImpl implements RelationshipRule<Rectangle> {
 
   @Override
   public ShapeRelationship calculateRelationship(Rectangle shape1, Rectangle shape2) {
-    if(shape1.getArea() == shape2.getArea()) {
+    if (shape1.getArea() == shape2.getArea()) {
       return ShapeRelationship.EQUAL_AREA;
     } else {
       return ShapeRelationship.NONE;

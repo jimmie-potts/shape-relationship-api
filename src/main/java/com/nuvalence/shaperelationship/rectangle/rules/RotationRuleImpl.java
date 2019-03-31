@@ -8,7 +8,7 @@ public class RotationRuleImpl implements RelationshipRule<Rectangle> {
 
   @Override
   public ShapeRelationship calculateRelationship(Rectangle shape1, Rectangle shape2) {
-    if(shape1.getLength() == shape2.getWidth() && shape1.getWidth() == shape2.getLength()){
+    if (shape1.getLength() == shape2.getWidth() && shape1.getWidth() == shape2.getLength()) {
       return ShapeRelationship.ROTATED;
     } else {
       return ShapeRelationship.NONE;

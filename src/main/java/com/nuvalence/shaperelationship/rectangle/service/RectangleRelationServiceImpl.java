@@ -9,19 +9,21 @@ import com.nuvalence.shaperelationship.rectangle.rules.EqualEdgeRuleImpl;
 import com.nuvalence.shaperelationship.rectangle.rules.IntersectionRuleImpl;
 import com.nuvalence.shaperelationship.rectangle.rules.RotationRuleImpl;
 import com.nuvalence.shaperelationship.rules.RelationshipRule;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import org.springframework.stereotype.Service;
 
 @Service
 public class RectangleRelationServiceImpl implements RectangleRelationService {
-  private Set<RelationshipRule> rules;
+  List<RelationshipRule> rules;
 
   public RectangleRelationServiceImpl() {}
 
   @Override
   public void buildRulesSet(Set<ShapeRelationship> relationshipsToEvaluate) {
-    this.rules = new HashSet<>();
+    this.rules = new ArrayList<>();
 
     if (relationshipsToEvaluate == null || relationshipsToEvaluate.isEmpty()) {
       this.rules.add(new ContainmentRuleImpl());

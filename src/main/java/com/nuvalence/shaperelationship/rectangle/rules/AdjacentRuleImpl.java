@@ -8,8 +8,8 @@ public class AdjacentRuleImpl implements RelationshipRule<Rectangle> {
 
   @Override
   public ShapeRelationship calculateRelationship(Rectangle rect1, Rectangle rect2) {
-    if (rect1.getBottomRight().getX() == rect2.getUpperLeft().getX()
-        || rect1.getUpperLeft().getX() == rect2.getBottomRight().getX()) {
+    if (rect1.getBottomRight().getX().equals(rect2.getUpperLeft().getX())
+        || rect1.getUpperLeft().getX().equals(rect2.getBottomRight().getX())) {
       if (hasSharedWall(
           rect1.getBottomRight().getY(),
           rect1.getUpperLeft().getY(),
@@ -18,8 +18,8 @@ public class AdjacentRuleImpl implements RelationshipRule<Rectangle> {
         return ShapeRelationship.ADJANCENT;
       }
     }
-    if (rect1.getBottomRight().getY() == rect2.getUpperLeft().getY()
-        || rect1.getUpperLeft().getY() == rect2.getBottomRight().getY()) {
+    if (rect1.getBottomRight().getY().equals(rect2.getUpperLeft().getY())
+        || rect1.getUpperLeft().getY().equals(rect2.getBottomRight().getY())) {
       if (hasSharedWall(
           rect1.getUpperLeft().getX(),
           rect1.getBottomRight().getX(),
@@ -31,7 +31,7 @@ public class AdjacentRuleImpl implements RelationshipRule<Rectangle> {
     return ShapeRelationship.NONE;
   }
 
-  public boolean hasSharedWall(int a, int b, int x, int y) {
+  protected boolean hasSharedWall(int a, int b, int x, int y) {
     if (b > x || y > a) {
       return true;
     }
