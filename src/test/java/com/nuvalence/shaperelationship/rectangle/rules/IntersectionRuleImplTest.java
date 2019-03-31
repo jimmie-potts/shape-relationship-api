@@ -7,7 +7,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class IntersectionRuleImplTest {
-  IntersectionRuleImpl rule = new IntersectionRuleImpl();
+  IntersectionRuleImpl rule = new IntersectionRuleImpl(new ContainmentRuleImpl());
 
   @Test
   public void calculateRelationship_noIntersection_offset() {

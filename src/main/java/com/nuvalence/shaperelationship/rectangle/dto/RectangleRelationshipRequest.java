@@ -1,17 +1,23 @@
 package com.nuvalence.shaperelationship.rectangle.dto;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.nuvalence.shaperelationship.enums.ShapeRelationship;
+import java.util.Set;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 @Valid
 public class RectangleRelationshipRequest {
-  @Valid private Rectangle rectangle1;
-  @Valid private Rectangle rectangle2;
+  @Valid @NotNull private Rectangle rectangle1;
+  @Valid @NotNull private Rectangle rectangle2;
+  private Set<ShapeRelationship> relationshipsToEvaluate;
 
   private RectangleRelationshipRequest() {}
 
-  public RectangleRelationshipRequest(Rectangle rectangle1, Rectangle rectangle2) {
+  public RectangleRelationshipRequest(Rectangle rectangle1, Rectangle rectangle2, Set<ShapeRelationship> relationshipsToEvaluate) {
     this.rectangle1 = rectangle1;
     this.rectangle2 = rectangle2;
+    this.relationshipsToEvaluate = relationshipsToEvaluate;
   }
 
   public Rectangle getRectangle1() {
@@ -20,6 +26,10 @@ public class RectangleRelationshipRequest {
 
   public Rectangle getRectangle2() {
     return rectangle2;
+  }
+
+  public Set<ShapeRelationship> getRelationshipsToEvaluate() {
+    return relationshipsToEvaluate;
   }
 
   @Override
