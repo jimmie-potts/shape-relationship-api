@@ -1,10 +1,16 @@
 package com.nuvalence.shaperelationship.rectangle.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.nuvalence.shaperelationship.dto.ShapeCoordinate;
+import com.nuvalence.shaperelationship.rectangle.validator.ValidCoordinates;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
+@Valid
+@ValidCoordinates(upperLeft = "upperLeft", bottomRight = "bottomRight")
 public class Rectangle {
-  private ShapeCoordinate upperLeft;
-  private ShapeCoordinate bottomRight;
+  @NotNull private ShapeCoordinate upperLeft;
+  @NotNull private ShapeCoordinate bottomRight;
 
   private Rectangle() {}
 
@@ -19,6 +25,26 @@ public class Rectangle {
 
   public ShapeCoordinate getBottomRight() {
     return bottomRight;
+  }
+
+  @JsonIgnore
+  public int getLength() {
+    return upperLeft.getY() - bottomRight.getY();
+  }
+
+  @JsonIgnore
+  public int getWidth() {
+    return bottomRight.getX() - upperLeft.getX();
+  }
+
+  @JsonIgnore
+  public int getPerimeter() {
+    return (this.getLength() * 2) + (this.getWidth() * 2);
+  }
+
+  @JsonIgnore
+  public int getArea() {
+    return this.getLength() * this.getWidth();
   }
 
   @Override

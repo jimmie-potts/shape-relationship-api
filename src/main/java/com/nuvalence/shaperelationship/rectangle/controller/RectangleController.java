@@ -4,6 +4,10 @@ import com.nuvalence.shaperelationship.enums.ShapeRelationship;
 import com.nuvalence.shaperelationship.rectangle.dto.RectangleRelationshipRequest;
 import com.nuvalence.shaperelationship.rectangle.dto.RectangleRelationshipResponse;
 import com.nuvalence.shaperelationship.rectangle.service.RectangleRelationService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+import java.util.Set;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/rectangle")
 public class RectangleController {
   private final RectangleRelationService service;
 
@@ -22,11 +26,19 @@ public class RectangleController {
     this.service = service;
   }
 
-  @RequestMapping(path = "/analyze", method = RequestMethod.POST)
-  public ResponseEntity<?> analyze(@Valid @RequestBody RectangleRelationshipRequest request) {
-    ShapeRelationship relationship =
-        service.analyze(request.getRectangle1(), request.getRectangle2());
+  @RequestMapping(path = "/evaluate", method = RequestMethod.POST)
+  @ApiOperation(
+      value = "Evaluate possible relationships between two Rectangles",
+      notes = "To evaluate all possible Relationships, leave relationshipsToEvaluate null")
+  @ApiResponses({
+    @ApiResponse(code = 200, message = "Success", response = RectangleRelationshipResponse.class)
+  })
+  public ResponseEntity<?> evaluate(@RequestBody @Valid RectangleRelationshipRequest request) {
+    service.buildRulesSet(request.getRelationshipsToEvaluate());
 
-    return ResponseEntity.ok(new RectangleRelationshipResponse(relationship));
+    Set<ShapeRelationship> relationships =
+        service.evaluate(request.getRectangle1(), request.getRectangle2());
+
+    return ResponseEntity.ok(new RectangleRelationshipResponse(relationships));
   }
 }

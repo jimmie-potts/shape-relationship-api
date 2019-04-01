@@ -1,26 +1,27 @@
 package com.nuvalence.shaperelationship.rectangle.dto;
 
 import com.nuvalence.shaperelationship.enums.ShapeRelationship;
+import java.util.Set;
 
 public class RectangleRelationshipResponse {
-  private ShapeRelationship shapeRelationship;
+  private Set<ShapeRelationship> shapeRelationships;
 
   private RectangleRelationshipResponse() {}
 
-  public RectangleRelationshipResponse(ShapeRelationship shapeRelationship) {
-    this.shapeRelationship = shapeRelationship;
+  public RectangleRelationshipResponse(Set<ShapeRelationship> shapeRelationships) {
+    this.shapeRelationships = shapeRelationships;
   }
 
-  public ShapeRelationship getShapeRelationship() {
-    return shapeRelationship;
+  public Set<ShapeRelationship> getShapeRelationships() {
+    return shapeRelationships;
   }
 
-  public void setShapeRelationship(ShapeRelationship shapeRelationship) {
-    this.shapeRelationship = shapeRelationship;
+  public void setShapeRelationships(Set<ShapeRelationship> shapeRelationships) {
+    this.shapeRelationships = shapeRelationships;
   }
 
   @Override
   public String toString() {
-    return "RectangleRelationshipResponse{" + "shapeRelationship=" + shapeRelationship + '}';
+    return "RectangleRelationshipResponse{" + "shapeRelationships=" + shapeRelationships + '}';
   }
 }
