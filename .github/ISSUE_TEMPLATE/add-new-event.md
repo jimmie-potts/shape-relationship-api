@@ -1,3 +1,13 @@
+---
+name: Request a new Notification Event
+about: This form allows you to request a new Notification Event from the State & Notifications
+Team
+title: "[NEW NOTIFICATION EVENT REQUEST]"
+labels: ''
+assignees: 'ARUMENAP'
+
+---
+
 Please complete ALL information below and submit the form:
 
 1- High level description of the event and its purpose:
