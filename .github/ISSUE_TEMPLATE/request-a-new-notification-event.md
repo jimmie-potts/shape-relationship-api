@@ -1,10 +1,9 @@
 ---
 name: Request a new Notification Event
 about: This form allows you to request a new Notification Event from the State & Notifications
-Team
 title: "[NEW NOTIFICATION EVENT REQUEST]"
 labels: ''
-assignees: 'ARUMENAP'
+assignees: jimmie-potts
 
 ---
 
