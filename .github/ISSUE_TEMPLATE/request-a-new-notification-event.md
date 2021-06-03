@@ -10,6 +10,7 @@ assignees: jimmie-potts
 Please complete ALL information below and submit the form:
 
 1- High level description of the event and its purpose:
+<input type="text" id="notificationDescription" name="notificationDescription"/>
 
 2- The name of the team/product publishing the event:
 
