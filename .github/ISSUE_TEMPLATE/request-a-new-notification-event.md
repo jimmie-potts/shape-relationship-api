@@ -24,3 +24,5 @@ Please complete ALL information below and submit the form:
 7- The event body in json format:
 
 8- The types of the fields of the event body:
+
+9- Testing the template:
